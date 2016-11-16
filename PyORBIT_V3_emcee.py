@@ -1,7 +1,6 @@
 from PyORBIT_V3_Classes import *
 import numpy as np
 import emcee
-from pyde.de import DiffEvol
 import h5py
 import cPickle as pickle
 import os
@@ -53,47 +52,20 @@ if mc.starting_point_flag:
     for ii in xrange(0, mc.nwalkers):
         population[ii, :] = np.random.normal(starting_point, 0.0000001)
 
-else:
-    if os.path.isfile(dir_output + 'pyde_pops.pick'):
-        print os.path.isfile(dir_output + 'pyde_pops.pick')
-        population = pickle.load(open(dir_output + 'pyde_pops.pick', 'rb'))
-        starting_point = np.median(population, axis=0)
-        #pyde_mean = pickle.load(open(dir_output + 'pyde_mean.pick', 'rb'))
-        mc.recenter_bounds(starting_point, population)
 
-    else:
-        print 'PyDE'
-        de = DiffEvol(mc, mc.bounds, mc.nwalkers, maximize=True)
-        de.optimize(mc.ngen)
-        print 'PyDE completed'
+print 'emcee'
+sampler = emcee.EnsembleSampler(mc.nwalkers, mc.ndim, mc, threads=mc.nwalkers)
+sampler.run_mcmc(population, 5000, thin=mc.thin)
 
-        population = de.population
-        starting_point = np.median(population, axis=0)
-        pickle.dump(starting_point, open(dir_output + 'pyde_mean.pick', 'wb'))
+chain_med = np.median(mc.flatchain[:, :], axis=0)
 
-        #np.savetxt(dir_output + 'pyDEout_original_bounds.dat', mc.bounds)
-        #np.savetxt(dir_output + 'pyDEout_original_pops.dat', population)
-
-        # bounds redefinition and fix for PyDE anomalous results
-        if mc.recenter_bounds_flag:
-            pickle.dump(mc.bounds, open(dir_output + 'bounds_orig.pick', 'wb'))
-            pickle.dump(population, open(dir_output + 'pyde_pops_orig.pick', 'wb'))
-            mc.recenter_bounds(starting_point, population)
-            pickle.dump(mc.bounds, open(dir_output + 'bounds.pick', 'wb'))
-            pickle.dump(population, open(dir_output + 'pyde_pops.pick', 'wb'))
-
-            #np.savetxt(dir_output + 'pyDEout_redefined_bounds.dat', mc.bounds)
-            #np.savetxt(dir_output + 'pyDEout_redefined_pops.dat', de.population)
-            print 'REDEFINED BOUNDS'
-
-        else:
-            pickle.dump(mc.bounds, open(dir_output + 'bounds.pick', 'wb'))
-            pickle.dump(population, open(dir_output + 'pyde_pops.pick', 'wb'))
-
-
+starting_point = chain_med
 mc.results_resumen(starting_point)
+for ii in xrange(0, mc.nwalkers):
+    population[ii, :] = np.random.normal(starting_point, 0.0000001)
 
-    #json.dump(mc.variable_list, open('output/' + mc.planet_name + '_vlist.json', 'wb'))
+
+#json.dump(mc.variable_list, open('output/' + mc.planet_name + '_vlist.json', 'wb'))
 pickle.dump(mc.variable_list, open(dir_output + 'vlist.pick', 'wb'))
 pickle.dump(mc.scv.use_offset,  open(dir_output + 'scv_offset.pick', 'wb'))
 

@@ -10,12 +10,12 @@ Planets:
     Orbit: keplerian
     Boundaries:
       P: [30.0, 35.0]
-      M: [250.0, 270.0]
+      K: [250.0, 270.0]
       e: [0.00, 0.800]
+    Starts:
+      P: 33.00
+      K: 260.00
     Tcent: tran_1p.dat
-    Fixed:
-      i: 90.000
-      lN: 270.0000
     Inclination: [90.000, 0.010]
 Tref: 6050.00000
 emcee:

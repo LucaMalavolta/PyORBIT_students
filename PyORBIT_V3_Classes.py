@@ -1,8 +1,6 @@
 import numpy as np
 import kepler_exo as kp
 import yaml
-import ttvfast
-
 
 def get_var_log(var, fix, i):
     return np.log2(var[i], dtype=np.double)
@@ -754,7 +752,7 @@ class TransitCentralTimes(Dataset):
         self.n_sys = {}
         self.mask = {}
         self.bounds = {}
-
+        self.starts = {}
         self.deltaT = 1.10
 
         print 'Opening: ', input_file
@@ -1138,7 +1136,7 @@ def yaml_parser(file_conf, mc):
         if 'Starts' in conf[counter]:
             mc.starting_point_flag = True
             starts_conf = conf[counter]['Starts']
-            for var in bound_conf:
+            for var in starts_conf:
                 mc.dataset_list[counter].starts[var] = np.asarray(starts_conf[var], dtype=np.double)
 
     mc.planet_name = config_in['Output']
@@ -1171,7 +1169,7 @@ def yaml_parser(file_conf, mc):
             if 'Starts' in planet_conf:
                 mc.starting_point_flag = True
                 starts_conf = planet_conf['Starts']
-                for var in bound_conf:
+                for var in starts_conf:
                     mc.pcv.starts[planet_name][var] = np.asarray(starts_conf[var], dtype=np.double)
 
             if 'Orbit' in planet_conf:
