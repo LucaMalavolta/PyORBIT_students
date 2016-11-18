@@ -10,7 +10,7 @@ Planets:
     Orbit: keplerian
     Boundaries:
       P: [30.0, 35.0]
-      K: [250.0, 270.0]
+      K: [40.0, 70.0]
       e: [0.00, 0.800]
     Starts:
       P: 33.00

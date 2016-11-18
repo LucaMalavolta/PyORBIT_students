@@ -55,9 +55,18 @@ if mc.starting_point_flag:
 
 print 'emcee'
 sampler = emcee.EnsembleSampler(mc.nwalkers, mc.ndim, mc, threads=mc.nwalkers)
-sampler.run_mcmc(population, 5000, thin=mc.thin)
+sampler.run_mcmc(population, 2000)
 
-chain_med = np.median(mc.flatchain[:, :], axis=0)
+
+chain_T = np.ndarray([2000, mc.nwalkers, mc.ndim], dtype=np.double)
+for ii in xrange(0, mc.ndim):
+    chain_T[:, :, ii] = sampler.chain[:, :, ii].T
+
+chain_burnt = chain_T[20:, :, :]
+s = chain_burnt.shape
+flatchain = chain_burnt.reshape(s[1] * s[0], s[2])
+
+chain_med = np.median(flatchain[:, :], axis=0)
 
 starting_point = chain_med
 mc.results_resumen(starting_point)
