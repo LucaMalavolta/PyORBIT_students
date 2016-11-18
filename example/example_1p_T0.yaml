@@ -1,5 +1,5 @@
-Name: example_1p
-Output: example_1p
+Name: example_1p_T0
+Output: example_1p_T0
 Inputs:
   0:
       File: rv_data_1p.dat
@@ -15,7 +15,7 @@ Planets:
     Starts:
       P: 33.00
       K: 55.00
-    #Tcent: tran_1p.dat
+    Tcent: tran_1p.dat
     Inclination: [90.000, 0.010]
 Tref: 6050.00000
 emcee:

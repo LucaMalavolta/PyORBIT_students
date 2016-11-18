@@ -61,22 +61,20 @@ y = kp.kepler_RV_T0P(xrand0, f, P, K, e, o)
 yrand = np.random.normal(y,1.)
 tcent = kp.kepler_Tcent_T0P(P, f, e, o)
 
-transit = tref + tcent + P*np.arange(-5.0,5.0,1.0)
+transit = tref + tcent #+ P*np.arange(-5.0,5.0,1.0)
 
 import matplotlib.pyplot as plt
 plt.plot(x,y)
 plt.scatter(xrand,yrand)
-for to in transit:
-    plt.axvline(to)
+plt.axvline(transit)
 plt.show()
 
 
-fileout = open('rv_data_1p.dat','w')
-for xv,yv in zip(xrand,yrand):
-    fileout.write('{0:12f} {1:8f} {2:8f} {3:2d} {3:4d}\n'.format(xv,yv,1.0000, 0, 0))
-fileout.close()
+#fileout = open('rv_data_1p.dat','w')
+#for xv,yv in zip(xrand,yrand):
+#    fileout.write('{0:12f} {1:8f} {2:8f} {3:2d} {3:4d}\n'.format(xv,yv,1.0000, 0, 0))
+#fileout.close()
 
 fileout = open('tran_1p.dat','w')
-for xv,yv in enumerate(transit):
-    fileout.write('{0:5d} {1:8f} {2:8f}\n'.format(xv,yv,0.001))
+fileout.write('{0:5d} {1:8f} {2:8f}\n'.format(0,transit,0.001))
 fileout.close()
