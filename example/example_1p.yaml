@@ -14,7 +14,7 @@ Planets:
       e: [0.00, 0.800]
     Starts:
       P: 33.00
-      K: 260.00
+      K: 55.00
     Tcent: tran_1p.dat
     Inclination: [90.000, 0.010]
 Tref: 6050.00000
