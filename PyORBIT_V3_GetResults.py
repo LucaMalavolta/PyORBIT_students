@@ -310,7 +310,6 @@ if 'kepler' in mc.model_list:
         sel_list = []
         sel_label = []
 
-        print mc.variable_list[planet_name]
         if 'P' in mc.variable_list[planet_name]:
             sel_list.append(convert_out['P'])
             sel_label.append('P')
