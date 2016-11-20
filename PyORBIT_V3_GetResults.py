@@ -102,6 +102,9 @@ print
 print 'Acceptance Fraction for all walkers:'
 print acceptance_fraction[:]
 print
+print 'Autocorrelation time all walkers:'
+print acor[:]
+print
 print '*************************************************************'
 print
 
