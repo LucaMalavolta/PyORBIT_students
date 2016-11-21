@@ -1,0 +1,35 @@
+Name: HAT-P-19
+Output: HAT-P-19_2nd_run
+Inputs:
+  0:
+      File: HAT-P-19_RVs_Keck.dat
+      Kind: RV
+      Models: ['kepler']
+  1:
+      File: HAT-P-19_RVs_Subaru.dat
+      Kind: RV
+      Models: ['kepler']
+Planets:
+  0:
+    Orbit: keplerian
+    Boundaries:
+      P: [2.00, 6.00]
+      K: [0.50, 100.0]
+      e: [0.00, 0.800]
+    Priors:
+      P: ['Gaussian',4.009, 0.001]
+    Starts:
+      P: 4.009
+      K:
+      e:
+      o:
+      f:
+    Tcent: tran_1p.dat
+    Inclination: [88.2, 0.4]
+emcee:
+  Nsteps:
+  Nburn:
+  Npop_mult: 2
+  Thin:
+  Recenter_Bounds: True
+Star_Mass: [0.842, 0.042]

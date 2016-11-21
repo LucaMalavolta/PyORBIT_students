@@ -1,0 +1,31 @@
+Name: HAT-P-20
+Output: HAT-P-20_2nd_run
+Inputs:
+  0:
+      File: HAT-P-20_RVs.dat
+      Kind: RV
+      Models: ['kepler']
+Planets:
+  0:
+    Orbit: keplerian
+    Boundaries:
+      P: [1.50, 5.00]
+      K: [0.50, 2000.0]
+      e: [0.00, 0.800]
+    Priors:
+      P: ['Gaussian', 2.875, 0.001]
+    Starts:
+      P: 2.875
+      K:
+      e:
+      o:
+      f:
+    Tcent: tran_1p.dat
+    Inclination: [86.8, 0.2]
+emcee:
+  Nsteps:
+  Nburn:
+  Npop_mult: 2
+  Thin:
+  Recenter_Bounds: True
+Star_Mass: [0.756, 0.028]

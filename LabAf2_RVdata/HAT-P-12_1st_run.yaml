@@ -1,0 +1,27 @@
+Name: HAT-P-12
+Output: HAT-P-12_1st_run
+Inputs:
+  0:
+      File: HAT-P-12_RVs.dat
+      Kind: RV
+      Models: ['kepler']
+Planets:
+  0:
+    Orbit: keplerian
+    Boundaries:
+      P: [2.00, 5.00]
+      K: [0.50, 100.0]
+      e: [0.00, 0.800]
+    Priors:
+      P: ['Gaussian',3.213, 0.001]
+    Starts:
+      P: 3.213
+    Tcent: tran_1p.dat
+    Inclination: [89.0, 0.4]
+emcee:
+  Nsteps: 4000
+  Nburn:   2000
+  Npop_mult: 2
+  Thin: 1
+  Recenter_Bounds: True
+Star_Mass: [0.733, 0.018]
