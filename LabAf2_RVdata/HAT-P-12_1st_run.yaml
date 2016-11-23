@@ -16,7 +16,6 @@ Planets:
       P: ['Gaussian',3.213, 0.001]
     Starts:
       P: 3.213
-    Tcent: tran_1p.dat
     Inclination: [89.0, 0.4]
 emcee:
   Nsteps: 4000

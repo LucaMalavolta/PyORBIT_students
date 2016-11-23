@@ -24,7 +24,6 @@ Planets:
       e:
       o:
       f:
-    Tcent: tran_1p.dat
     Inclination: [88.2, 0.4]
 emcee:
   Nsteps:
