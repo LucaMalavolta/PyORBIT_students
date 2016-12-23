@@ -1,0 +1,51 @@
+HAT-P-12:
+	Hartman+2009 http://adsabs.harvard.edu/abs/2009ApJ...706..785H
+	Kuntson+2014 http://adsabs.harvard.edu/abs/2014ApJ...785..126K
+	Mstar  = 0.733±0.018 Msun
+	P = 3.2130598±0.0000021 d
+	I = 89.0±0.4
+	R= 10.749 +0.325-0.235 Re
+	
+HAT-P-19
+	Hartman+2011 http://adsabs.harvard.edu/abs/2011ApJ...726...52H
+	Mstar = 0.842±0.042 Msun
+	P = 4.008778±0.000006 d
+	I = 88.2±0.4
+	R= 12.689±0.807 Re
+	
+HAT-P-20
+	Bakos+2009 http://adsabs.harvard.edu/abs/2011ApJ...742..116B
+	Kuntson+2014 http://adsabs.harvard.edu/abs/2014ApJ...785..126K
+	Mstar = 0.756±0.028  Msun
+	P = 2.875317±0.000004 d
+	i = 86.8±0.2
+	R= 9.718±0.370 Re
+	
+Quatar-1b
+	Covino+2013 http://adsabs.harvard.edu/abs/2013A%26A...554A..28C
+	Mstar =  0.838+0.043-0.041 Msun
+	P = 1.42002420±0.00000022 d
+	I = 84.08+0.16-0.15
+	R = 13.047±0.504 Re
+	
+WASP-12b 
+	Hebb+2009 http://adsabs.harvard.edu/abs/2009ApJ...693.1920H
+	Kuntson+2014 http://adsabs.harvard.edu/abs/2014ApJ...785..126K
+	Mstar = 1.434+0.110-0.090 Msun
+	P = 1.09142030±0.00000014 d
+	I = 83.37+0.72-0.64
+	R = 21.30+0.64-0.62 Re
+
+WASP-52b
+	Hebrard+2013 http://adsabs.harvard.edu/abs/2013A%26A...549A.134H
+	Mstar = 0.87±0.03  Msun
+	P = 1.7497798±0.0000012 d
+	I = 85.35±0.20
+	R = 14.24±0.34 Re
+	
+WTS-2 
+	Birkby+2014 http://adsabs.harvard.edu/abs/2014MNRAS.440.1470B
+	Mstar = 0.820±0.082 
+	P=1.01870680±0.00000065
+	I=83.55±0.53
+R=15.28±0.68
