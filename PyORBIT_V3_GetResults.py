@@ -92,7 +92,7 @@ mc.bounds = h5f['/emcee/bound']
 chain = h5f['/emcee/chain']
 lnprobability = h5f['/emcee/lnprobability']
 acceptance_fraction = h5f['/emcee/acceptance_fraction']
-acor = h5f['/emcee/acor']
+#acor = h5f['/emcee/acor']
 
 print mc.bounds[:]
 
@@ -101,9 +101,9 @@ print '*************************************************************'
 print
 print 'Acceptance Fraction for all walkers:'
 print acceptance_fraction[:]
-print
-print 'Autocorrelation time all walkers:'
-print acor[:]
+#print
+#print 'Autocorrelation time all walkers:'
+#print acor[:]
 print
 print '*************************************************************'
 print
