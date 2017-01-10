@@ -106,7 +106,7 @@ emcee_grp.create_dataset("chain", data=sampler.chain, compression="gzip")
 
 emcee_grp.create_dataset("lnprobability", data=sampler.lnprobability, compression="gzip")
 emcee_grp.create_dataset("acceptance_fraction", data=sampler.acceptance_fraction, compression="gzip")
-emcee_grp.create_dataset("acor", data=sampler.acor, compression="gzip")
+#emcee_grp.create_dataset("acor", data=sampler.acor, compression="gzip")
 
 h5f.close()
 
